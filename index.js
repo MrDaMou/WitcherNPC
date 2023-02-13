@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, HOST, () => {
-  console.log(`Running on http://${HOST}:${PORT}`);
+  console.log(`Dummy server running on http://${HOST}:${PORT}`);
 });
 
 // Create a new client instance
