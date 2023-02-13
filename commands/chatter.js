@@ -8,21 +8,20 @@ module.exports = {
 		.setName('chatter')
 		.setDescription('Activates random NPC encounters.')
 		.addChannelOption((option) => 
-			option.setName('Channel')
+			option.setName('channel')
 			.setDescription('Channel to join')
 			.setRequired(true)
 			.addChannelTypes(ChannelType.GuildVoice))
 		.addIntegerOption((option) =>
-			option.setName('Interval')
+			option.setName('interval')
 			.setDescription('Interval in witch the encounters happen in seconds')
 			.setMinValue(30)
-			.setRequired(false)
-		),
+			.setRequired(false)),
 
 	async execute(interaction, syncVars) {
 
-		const voiceChannel = interaction.options.getChannel('Channel');
-		const interval = interaction.options.getInteger('Interval');
+		const voiceChannel = interaction.options.getChannel('channel');
+		const interval = interaction.options.getInteger('interval');
 
 		syncVars.playState = true;
 		var files = fs.readdirSync(path.join(__dirname, '/src_audio/'));
