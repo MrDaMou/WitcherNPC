@@ -8,15 +8,22 @@ module.exports = {
 		.setName('chatter')
 		.setDescription('Activates random NPC encounters.')
 		.addChannelOption((option) => 
-			option.setName('channel')
+			option.setName('Channel')
 			.setDescription('Channel to join')
 			.setRequired(true)
-			.addChannelTypes(ChannelType.GuildVoice)),
+			.addChannelTypes(ChannelType.GuildVoice))
+		.addIntegerOption((option) =>
+			option.setName('Interval')
+			.setDescription('Interval in witch the encounters happen in seconds')
+			.setMinValue(30)
+			.setRequired(false)
+		),
 
 	async execute(interaction, syncVars) {
 
-		const voiceChannel = interaction.options.getChannel('channel');
-		
+		const voiceChannel = interaction.options.getChannel('Channel');
+		const interval = interaction.options.getInteger('Interval');
+
 		syncVars.playState = true;
 		var files = fs.readdirSync(path.join(__dirname, '/src_audio/'));
 		await interaction.reply("Joined!");
@@ -28,7 +35,7 @@ module.exports = {
 			playRandomVoiceLine(voiceChannel.id, interaction.guildId, interaction.guild.voiceAdapterCreator, files);
 
 			// wait until we join again
-			await sleep(120000);
+			await sleep(interval*1000);
 	}
 
 		
