@@ -1,5 +1,4 @@
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
-const { token } = require('./config.json');
 const path = require('node:path');
 const fs = require('node:fs');
 const express = require('express');
