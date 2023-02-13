@@ -129,3 +129,4 @@ dist
 .eslintrc.json
 config.json
 package-lock.json
+.vs/slnx.sqlite
