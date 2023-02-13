@@ -16,7 +16,7 @@ module.exports = {
 			option.setName('interval')
 			.setDescription('Interval in witch the encounters happen in seconds')
 			.setMinValue(30)
-			.setRequired(false)),
+			.setRequired(true)),
 
 	async execute(interaction, syncVars) {
 
