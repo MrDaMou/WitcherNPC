@@ -6,6 +6,10 @@ const guildId = process.env.GUILD_ID;
 const token = process.env.TOKEN
 const fs = require('node:fs');
 
+console.log(`Client ID: ${clientId}`);
+console.log(`Guild ID: ${guildId}`);
+console.log(`Token: ${token}`);
+
 const commands = [];
 // Grab all the command files from the commands directory you created earlier
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
