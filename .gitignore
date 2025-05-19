@@ -132,4 +132,4 @@ package-lock.json
 .vs/slnx.sqlite
 
 # Ignore all wav files in commands/src_audio
-commands/src_audio/*.wav
+commands/src_audio

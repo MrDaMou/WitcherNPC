@@ -24,10 +24,14 @@ A Discord Bot that enables random Witcher NPC encounters on your server!
 3. Configure your bot:
    - edit .env.example to include your bots credentials
    - rename .env.example to .env
+
+## Registering slash commands on Discord Server
+node --env-file=.env deploy-commands.js 
+
 ## Usage
 Start the bot with:
 ```sh
-node index.js
+node --env-file=.env index.js
 ```
 
 ## Running with Docker

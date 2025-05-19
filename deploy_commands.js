@@ -1,19 +1,15 @@
+const { REST, Routes } = require('discord.js');
+const fs = require('node:fs');
+
 // Don't require config.json, get from environment variables instead
 // const { clientId, guildId, token } = require('./config.json');
 const clientId = process.env.CLIENT_ID;
 const guildId = process.env.GUILD_ID;
 const token = process.env.TOKEN
 
-console.log(`Server started!`);
-
 console.log(`Client ID: ${clientId}`);
 console.log(`Guild ID: ${guildId}`);
 console.log(`Token: ${token}`);
-
-const { REST, Routes } = require('discord.js');
-const fs = require('node:fs');
-
-
 
 const commands = [];
 // Grab all the command files from the commands directory you created earlier
