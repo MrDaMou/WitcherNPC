@@ -48,7 +48,7 @@ docker run -d --name witchernpc \
   -e TOKEN=your_token_here \
   -e CLIENT_ID=your_docker_client_id \
   -e GUILD_ID=servers_guild_id
-  -v $(pwd)/commands/src_audio:/app/commands/src_audio \
+  -v $(pwd)/commands/src_audio:/usr/src/app/commands/src_audio \
   -p 3000:3000 \
   witchernpc
 ```
