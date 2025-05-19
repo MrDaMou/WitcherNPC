@@ -24,7 +24,8 @@ module.exports = {
 		const interval = interaction.options.getInteger('interval');
 
 		syncVars.playState = true;
-		var files = fs.readdirSync(path.join(__dirname, '/src_audio/'));
+		// Only include .wav files in the files array
+		var files = fs.readdirSync(path.join(__dirname, '/src_audio/')).filter(file => file.endsWith('.wav'));
 		await interaction.reply("Joined!");
 
 
